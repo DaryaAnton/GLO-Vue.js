@@ -36,12 +36,18 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <CardBestComponent />
-              <CardBestComponent />
-              <CardBestComponent />
-              <CardBestComponent />
-              <CardBestComponent />
-              <CardBestComponent />
+              <CardBestComponent classItem="shop__item" :name="goods[0].name" :price="goods[0].price"
+                :img="goods[0].img" />
+              <CardBestComponent classItem="shop__item" :name="goods[1].name" :price="goods[1].price"
+                :img="goods[1].img" />
+              <CardBestComponent classItem="shop__item" :name="goods[2].name" :price="goods[2].price"
+                :img="goods[2].img" />
+              <CardBestComponent classItem="shop__item" :name="goods[3].name" :price="goods[3].price"
+                :img="goods[3].img" />
+              <CardBestComponent classItem="shop__item" :name="goods[4].name" :price="goods[4].price"
+                :img="goods[4].img" />
+              <CardBestComponent classItem="shop__item" :name="goods[5].name" :price="goods[5].price"
+                :img="goods[5].img" />
             </div>
           </div>
         </div>
@@ -57,47 +63,47 @@ export default {
   components: { NavBarComponent, CardBestComponent },
   data() {
     return {
-      cards: [
+      goods: [
         {
           id: 0,
           img: 'good-1.jpg',
-          title: 'Solimo Coffee Beans 2kg',
-          price: '10.73$',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73,
           country: 'Brazil'
         },
         {
           id: 1,
           img: 'good-1.jpg',
-          title: 'Presto Coffee Beans 1kg',
-          price: '15.99$',
+          name: 'Presto Coffee Beans 1kg',
+          price: 15.99,
           country: 'Argentina'
         },
         {
           id: 2,
           img: 'good-1.jpg',
-          title: 'AROMISTICO Coffee 1kg',
-          price: '6.99$',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
           country: 'Colombia'
         },
         {
           id: 3,
           img: 'good-1.jpg',
-          title: 'Caffe Molinari 2kg',
-          price: '12.11$',
+          name: 'Caffe Molinari 2kg',
+          price: 12.11,
           country: 'Zimbabwe'
         },
         {
           id: 4,
           img: 'good-1.jpg',
-          title: 'De Roccis 10kg',
-          price: '18.97$',
+          name: 'De Roccis 10kg',
+          price: 18.97,
           country: 'Waorania'
         },
         {
           id: 5,
           img: 'good-1.jpg',
-          title: 'Ionia 1.5kg',
-          price: '5.19$',
+          name: 'Ionia 1.5kg',
+          price: 5.19,
           country: 'Russia'
         },
 

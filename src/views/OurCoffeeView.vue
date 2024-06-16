@@ -54,12 +54,18 @@
 				<div class="row">
 					<div class="col-lg-10 offset-lg-1">
 						<div class="shop__wrapper">
-							<CardBestComponent />
-							<CardBestComponent />
-							<CardBestComponent />
-							<CardBestComponent />
-							<CardBestComponent />
-							<CardBestComponent />
+							<CardBestComponent classItem="shop__item" :name="coffee[0].name" :price="coffee[0].price"
+								:img="coffee[0].img" />
+							<CardBestComponent classItem="shop__item" :name="coffee[1].name" :price="coffee[1].price"
+								:img="coffee[1].img" />
+							<CardBestComponent classItem="shop__item" :name="coffee[2].name" :price="coffee[2].price"
+								:img="coffee[2].img" />
+							<CardBestComponent classItem="shop__item" :name="coffee[3].name" :price="coffee[3].price"
+								:img="coffee[3].img" />
+							<CardBestComponent classItem="shop__item" :name="coffee[4].name" :price="coffee[4].price"
+								:img="coffee[4].img" />
+							<CardBestComponent classItem="shop__item" :name="coffee[5].name" :price="coffee[5].price"
+								:img="coffee[5].img" />
 						</div>
 					</div>
 				</div>
@@ -75,47 +81,47 @@ export default {
 	components: { NavBarComponent, CardBestComponent },
 	data() {
 		return {
-			cards: [
+			coffee: [
 				{
 					id: 0,
 					img: 'good-1.jpg',
-					title: 'Solimo Coffee Beans 2kg',
-					price: '10.73$',
+					name: 'Solimo Coffee Beans 2kg',
+					price: 10.73,
 					country: 'Brazil'
 				},
 				{
 					id: 1,
 					img: 'good-1.jpg',
-					title: 'Presto Coffee Beans 1kg',
-					price: '15.99$',
+					name: 'Presto Coffee Beans 1kg',
+					price: 15.99,
 					country: 'Argentina'
 				},
 				{
 					id: 2,
 					img: 'good-1.jpg',
-					title: 'AROMISTICO Coffee 1kg',
-					price: '6.99$',
+					name: 'AROMISTICO Coffee 1kg',
+					price: 6.99,
 					country: 'Colombia'
 				},
 				{
 					id: 3,
 					img: 'good-1.jpg',
-					title: 'Caffe Molinari 2kg',
-					price: '12.11$',
+					name: 'Caffe Molinari 2kg',
+					price: 12.11,
 					country: 'Zimbabwe'
 				},
 				{
 					id: 4,
 					img: 'good-1.jpg',
-					title: 'De Roccis 10kg',
-					price: '18.97$',
+					name: 'De Roccis 10kg',
+					price: 18.97,
 					country: 'Waorania'
 				},
 				{
 					id: 5,
 					img: 'good-1.jpg',
-					title: 'Ionia 1.5kg',
-					price: '5.19$',
+					name: 'Ionia 1.5kg',
+					price: 5.19,
 					country: 'Russia'
 				},
 			]
