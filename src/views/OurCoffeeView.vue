@@ -54,18 +54,16 @@
 				<div class="row">
 					<div class="col-lg-10 offset-lg-1">
 						<div class="shop__wrapper">
-							<CardBestComponent classItem="shop__item" :name="coffee[0].name" :price="coffee[0].price"
-								:img="coffee[0].img" />
-							<CardBestComponent classItem="shop__item" :name="coffee[1].name" :price="coffee[1].price"
-								:img="coffee[1].img" />
-							<CardBestComponent classItem="shop__item" :name="coffee[2].name" :price="coffee[2].price"
-								:img="coffee[2].img" />
-							<CardBestComponent classItem="shop__item" :name="coffee[3].name" :price="coffee[3].price"
-								:img="coffee[3].img" />
-							<CardBestComponent classItem="shop__item" :name="coffee[4].name" :price="coffee[4].price"
-								:img="coffee[4].img" />
-							<CardBestComponent classItem="shop__item" :name="coffee[5].name" :price="coffee[5].price"
-								:img="coffee[5].img" />
+
+							<CardBestComponent 
+								v-for="card in coffee"
+								:key="card.id"
+								classItem="shop__item" 
+								:name="card.name" 
+								:price="card.price"
+								:img="card.img" 
+							/>
+							
 						</div>
 					</div>
 				</div>
@@ -77,48 +75,49 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardBestComponent from '@/components/CardBestComponent.vue'
+import { v4 as uuidv4 } from 'uuid';
 export default {
 	components: { NavBarComponent, CardBestComponent },
 	data() {
 		return {
 			coffee: [
 				{
-					id: 0,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'Solimo Coffee Beans 2kg',
 					price: 10.73,
 					country: 'Brazil'
 				},
 				{
-					id: 1,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'Presto Coffee Beans 1kg',
 					price: 15.99,
 					country: 'Argentina'
 				},
 				{
-					id: 2,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'AROMISTICO Coffee 1kg',
 					price: 6.99,
 					country: 'Colombia'
 				},
 				{
-					id: 3,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'Caffe Molinari 2kg',
 					price: 12.11,
 					country: 'Zimbabwe'
 				},
 				{
-					id: 4,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'De Roccis 10kg',
 					price: 18.97,
 					country: 'Waorania'
 				},
 				{
-					id: 5,
+					id: uuidv4(),
 					img: 'good-1.jpg',
 					name: 'Ionia 1.5kg',
 					price: 5.19,

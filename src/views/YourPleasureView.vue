@@ -36,18 +36,14 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <CardBestComponent classItem="shop__item" :name="goods[0].name" :price="goods[0].price"
-                :img="goods[0].img" />
-              <CardBestComponent classItem="shop__item" :name="goods[1].name" :price="goods[1].price"
-                :img="goods[1].img" />
-              <CardBestComponent classItem="shop__item" :name="goods[2].name" :price="goods[2].price"
-                :img="goods[2].img" />
-              <CardBestComponent classItem="shop__item" :name="goods[3].name" :price="goods[3].price"
-                :img="goods[3].img" />
-              <CardBestComponent classItem="shop__item" :name="goods[4].name" :price="goods[4].price"
-                :img="goods[4].img" />
-              <CardBestComponent classItem="shop__item" :name="goods[5].name" :price="goods[5].price"
-                :img="goods[5].img" />
+              <CardBestComponent 
+                v-for="card in goods"
+								:key="card.id"
+                classItem="shop__item" 
+                :name="card.name" 
+                :price="card.price"
+                :img="card.img" 
+              />
             </div>
           </div>
         </div>
@@ -59,48 +55,50 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardBestComponent from '@/components/CardBestComponent.vue'
+import { v4 as uuidv4 } from 'uuid';
+
 export default {
   components: { NavBarComponent, CardBestComponent },
   data() {
     return {
       goods: [
         {
-          id: 0,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73,
           country: 'Brazil'
         },
         {
-          id: 1,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'Presto Coffee Beans 1kg',
           price: 15.99,
           country: 'Argentina'
         },
         {
-          id: 2,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'AROMISTICO Coffee 1kg',
           price: 6.99,
           country: 'Colombia'
         },
         {
-          id: 3,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'Caffe Molinari 2kg',
           price: 12.11,
           country: 'Zimbabwe'
         },
         {
-          id: 4,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'De Roccis 10kg',
           price: 18.97,
           country: 'Waorania'
         },
         {
-          id: 5,
+          id: uuidv4(),
           img: 'good-1.jpg',
           name: 'Ionia 1.5kg',
           price: 5.19,
