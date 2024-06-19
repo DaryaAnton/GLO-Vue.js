@@ -79,33 +79,13 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardBestComponent from '@/components/CardBestComponent.vue'
-import { v4 as uuidv4 } from 'uuid';
 import { scrollIntoView } from "seamless-scroll-polyfill";
 
 export default {
   components: { NavBarComponent, CardBestComponent },
-  data() {
-    return {
-      bestsellers: [
-        {
-          id: uuidv4(),
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
-        },
-        {
-          id: uuidv4(),
-          img: 'coffee-2.jpg',
-          name: 'Presto Coffee Beans 1kg',
-          price: 15.99
-        },
-        {
-          id: uuidv4(),
-          img: 'coffee-3.jpg',
-          name: 'AROMISTICO Coffee 1kg',
-          price: 6.99
-        },
-      ]
+  computed: {
+    bestsellers() {
+      return this.$store.getters['getBestsellers']
     }
   },
   methods: {

@@ -28,32 +28,9 @@ import NavLink from '@/components/NavLink.vue'
 
 export default {
 	components: { NavLink },
-  data() {
-    return {
-      links: {
-        header: {
-          id: 0,
-          icon: 'Logo.svg',
-          link: '/'
-        },
-        other: [
-          {
-            id: 1,
-            text: 'Our coffee',
-            link: '/our-coffee'
-          },
-          {
-            id: 2,
-            text: 'For your pleasure',
-            link: '/your-pleasure'
-          },
-          {
-            id: 3,
-            text: 'Contact us',
-            link: '/contact'
-          },
-        ]
-      }
+  computed: {
+    links() {
+      return this.$store.getters['getHeaderLinks']
     }
   }
 }

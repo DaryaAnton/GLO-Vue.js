@@ -74,7 +74,7 @@
                 </div>
                 <div class="col col-12">
                   <textarea 
-                    v-model="form.text"
+                    v-model="form.message"
                     class="form-control" 
                     name="message" 
                     id="message" 
@@ -99,20 +99,20 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 export default {
-  components: { NavBarComponent },
   data() {
     return {
       form: {
         name: '',
         phone: '',
         email: '',
-        text: ''
+        message: ''
       }
     }
   },
+  components: { NavBarComponent },
   methods: {
     submit() {
-      console.log(document.querySelector('form'));
+      console.log(this.form);
     }
   }
 }
