@@ -51,6 +51,11 @@ const goods = {
   getters: {
     getGoods(state) {
       return state.goods
+    },
+    getGoodsById(state) {
+      return (id) => {
+        return state.goods.find((card) => card.id === id)
+      }
     }
   }
 }
