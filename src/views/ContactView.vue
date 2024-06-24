@@ -39,9 +39,6 @@
                   {{ error.$message }}
                 </span>
                 </div>
-                <!-- <pre>
-                  {{ v$ }}
-                </pre> -->
               </div>
               <div class="form-group row">
                 <div class="col col-12 col-sm-3 d-flex align-items-start">
@@ -64,9 +61,6 @@
                     {{ error.$message }}
                   </span>
                 </div>
-                <!-- <pre>
-                {{ v$.email }}
-              </pre> -->
               </div>
 
               <div class="form-group row">
@@ -130,9 +124,6 @@
                   </span>
                 </div>
               </div>
-              <!-- <pre>
-                {{ v$.isCheckbox }}
-              </pre> -->
               <div class="row">
                 <div class="col">
                   <button type="submit" class="btn btn-outline-dark send-btn">Send us</button>
@@ -163,7 +154,6 @@ export default {
       message: '',
       isCheckbox: true,
       checkboxError: ''
-
     }
   },
   setup () {
@@ -190,7 +180,29 @@ export default {
         this.checkboxError = 'Поставьте галочку';
         return
       }
-      if (!isFormCorrect) return
+      if (!isFormCorrect) return;
+
+      const massage = {
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        message: this.message,
+      }
+
+      fetch('http://localhost:3000/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(massage)
+      }).then(() => {
+        this.name = '',
+        this.phone = '',
+        this.email = '',
+        this.message = '',
+        this.isCheckbox = true,
+        this.checkboxError = ''
+      })
     }
   }
 }
